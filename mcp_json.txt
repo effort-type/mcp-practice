@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "math_mcp_server": {
+      "command": "./.venv/Scripts/python.exe",
+      "args": ["./math_mcp_server.py"]
+    },
+    "web_search_mcp_server": {
+      "command": "./.venv/Scripts/python.exe",
+      "args": ["./web_search_mcp_server.py"]
+    }
+  }
+}

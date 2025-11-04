@@ -14,10 +14,10 @@ from langchain_openai import (
 load_dotenv(".env")
 # Tavily 웹 검색 API에서 사용할 키 설정 (실제로는 안전하게 환경 변수로 관리하는 것이 권장됨)
 TAVILY_API_KEY = os.getenv("TAVILY_API_KEY")
-OPENAI_API_KEY = str(os.getenv("OPENAI_API_KEY"))
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
 # OpenAI GPT 모델 인스턴스 초기화
-llm = ChatOpenAI(model="gpt-4-mini", api_key=OPENAI_API_KEY, temperature=0)
+llm = ChatOpenAI(model="gpt-4o-mini", api_key=OPENAI_API_KEY, temperature=0)
 
 # MCP 서버 생성 - 서버 이름은 "WebSearch"
 # 이 이름은 도구 목록 조회 시 식별자 역할을 하며, 여러 MCP 서버를 구분하는 데 사용됨
@@ -89,6 +89,6 @@ async def web_search(query: str) -> str:
 # 이 파일이 단독 실행될 경우 MCP 서버를 stdio 방식으로 실행함
 # stdio는 Cursor나 Claude Desktop에서 subprocess 방식으로 이 서버를 연결할 때 사용하는 통신 방식
 if __name__ == "__main__":
-    print(TAVILY_API_KEY)
-    print(OPENAI_API_KEY)
+    # print(TAVILY_API_KEY)
+    # print(OPENAI_API_KEY)
     mcp.run(transport="stdio")
